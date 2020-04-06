@@ -1,5 +1,6 @@
 import React from "react";
 import {data} from "./data";
+import {Link} from "react-router-dom";
 
 const Card = ({id}) => {
     const { title, subtitle } = data.find(item => item.id === id);
@@ -10,7 +11,9 @@ const Card = ({id}) => {
                 <p className="card-text">{subtitle}</p>
             </div>
             <div className="card-footer ">
-                <a href={`/page/${id}`} className="btn btn-outline-primary">Подробнее</a>
+                <Link to={`/page/${id}`}>
+                    <div className="btn btn-outline-primary">Подробнее</div>
+                </Link>
             </div>
     </div>
     );

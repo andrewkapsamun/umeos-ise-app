@@ -1,5 +1,6 @@
 import React from 'react';
 import { data } from './data';
+import {Link} from "react-router-dom";
 
 const Page = ({match}) => {
     const { id } = match.params;
@@ -11,7 +12,11 @@ const Page = ({match}) => {
                 <h1 className="display-4">{title}</h1>
                 <p className="lead">{subtitle}</p>
                 <p className="lead">{description}</p>
-                <a href={`/`} className="btn btn-outline-primary">На главную</a>
+                <Link to={'/'}>
+                    <div className="btn btn-outline-primary">
+                        На главную
+                    </div>
+                </Link>
             </div>
         </div>
     );
